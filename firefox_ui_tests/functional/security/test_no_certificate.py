@@ -44,8 +44,14 @@ class TestNoCertificate(FirefoxTestCase):
         self.assertEqual(self.identity_popup.organization_label.get_attribute('value'), '',
                          'The favicon has no label')
 
-        self.identity_popup.box.click()
-        Wait(self.marionette).until(lambda _: self.identity_popup.is_open)
+
+        #################################################
+        #Kavit has added the code here
+        self.open()
+        #self.identity_popup.box.click()
+        #Wait(self.marionette).until(lambda _: self.identity_popup.is_open)
+        #################################################
+
 
         # Check the idenity popup doorhanger
         self.assertEqual(self.identity_popup.popup.get_attribute('className'),

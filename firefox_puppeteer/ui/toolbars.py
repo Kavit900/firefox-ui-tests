@@ -447,6 +447,10 @@ class IdentityPopup(BaseLib):
         """
         return self.marionette.find_element(By.ID, 'identity-popup-content-verifier')
 
+    def open(self):
+        self.identity_popup.box.click()
+        Wait(self.marionette).until(lambda _: self.identity_popup.is_open)
+
     def close(self, force=False):
         """Closes the identity popup by hitting the escape key.
 

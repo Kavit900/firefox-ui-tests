@@ -70,8 +70,13 @@ class TestSSLStatusAfterRestart(FirefoxTestCase):
         """, script_args=[self.browser.navbar.locationbar.favicon])
         self.assertFalse(favicon_hidden)
 
-        self.identity_popup.box.click()
-        Wait(self.marionette).until(lambda _: self.identity_popup.is_open)
+        #################################################
+        #Kavit has added the open() function here
+        self.open()
+        #self.identity_popup.box.click()
+        #Wait(self.marionette).until(lambda _: self.identity_popup.is_open)
+
+        #################################################
 
         # Check the type shown on the idenity popup doorhanger
         self.assertEqual(self.identity_popup.popup.get_attribute('className'),

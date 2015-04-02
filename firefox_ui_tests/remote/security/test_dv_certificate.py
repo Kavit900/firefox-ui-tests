@@ -47,11 +47,13 @@ class TestDVCertificate(FirefoxTestCase):
                          'verifiedDomain',
                          'Identity is verified')
 
-        self.identity_popup.box.click()
-        Wait(self.marionette).until(
-            lambda _: self.identity_popup.is_open,
-            message='The popup should be open'
-        )
+
+        #################################################
+        #Kavit has added his code
+        self.open()
+        #self.identity_popup.box.click()
+        #Wait(self.marionette).until(lambda _: self.identity_popup.is_open,message='The popup should be open')
+        #################################################
 
         self.assertEqual(self.identity_popup.popup.get_attribute('className'),
                          'verifiedDomain',

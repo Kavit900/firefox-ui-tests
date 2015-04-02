@@ -165,8 +165,13 @@ class TestIdentityPopup(FirefoxTestCase):
         with self.marionette.using_context('content'):
             self.marionette.navigate(self.url)
 
-        self.identity_popup.box.click()
-        self.wait_for_condition(lambda _: self.identity_popup.is_open)
+
+        #################################################
+        #Kavit has added code here
+        self.open()    
+        #self.identity_popup.box.click()
+        #self.wait_for_condition(lambda _: self.identity_popup.is_open)
+        #################################################
 
         self.assertEqual(self.identity_popup.encryption_label.get_attribute('localName'),
                          'description')
